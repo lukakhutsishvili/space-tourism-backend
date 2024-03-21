@@ -41,3 +41,65 @@ paths:
                     type: string
                   bio:
                     type: string
+  /destination/{name}:
+    get:
+      tags:
+        - destination
+      parameters:
+        - name: name
+          in: path
+          description: Name of the destination to fetch
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      png:
+                        type: string
+                      webp:
+                        type: string
+                  description:
+                    type: string
+                  distance:
+                    type: string
+  /technology/{name}:
+    get:
+      tags:
+        - technology
+      parameters:
+        - name: name
+          in: path
+          description: Name of the destination to fetch
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      portrait:
+                        type: string
+                      landscape:
+                        type: string
+                  description:
+                    type: string

@@ -1,30 +1,26 @@
 import { Schema, model } from "mongoose";
-import { crewtype } from "type";
+import { technologytype } from "type";
 
 const { String } = Schema.Types;
 
-const technologySchema = new Schema<crewtype>({
+const technologySchema = new Schema<technologytype>({
   name: {
     type: String,
     require: true,
   },
   images: {
-    png: {
+    portrait: {
       type: String,
       require: true,
     },
-    webp: {
+    landscape: {
       type: String,
       require: true,
     },
-    role: {
-      type: String,
-      require: true,
-    },
-    description: {
-      type: String,
-      require: true,
-    },
+  },
+  description: {
+    type: String,
+    require: true,
   },
 });
 
