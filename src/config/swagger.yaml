@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: todoList
+  description: todoList app API
+  version: 0.1.9
+
+servers:
+  - url: http://localhost:3000/api
+    description: Local server
+
+paths:
+  /crew/{name}:
+    get:
+      tags:
+        - crew
+      parameters:
+        - name: name
+          in: path
+          description: Name of the destination to fetch
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      png:
+                        type: string
+                      webp:
+                        type: string
+                  role:
+                    type: string
+                  bio:
+                    type: string
