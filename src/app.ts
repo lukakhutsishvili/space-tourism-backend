@@ -16,4 +16,6 @@ app.use(cors());
 app.use("/api", Router);
 app.use("/", ...SwaggerMiddleware());
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, () => {
+  console.log("listening to" + process.env.PORT || 3000);
+});
